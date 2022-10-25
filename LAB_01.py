@@ -12,8 +12,11 @@ def get_coef(index, prompt):
         float: Коэффициент квадратного уравнения
     '''
     try:
-        #Пробуем прочитать коэффициент из командной строки
+        # Пробуем прочитать коэффициент из командной строки
         coef_str = sys.argv[index]
+        if (coef_str.isdigit() == False):
+            print("Ошибка! Введите число!")
+            coef_str = 0
     except:
         while True:
             #Вводим с клавиатуры
