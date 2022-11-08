@@ -3,80 +3,79 @@ import math
 
 
 def get_coef(index, prompt):
-    '''
-    Читаем коэффициент из командной строки или вводим с клавиатуры
-    Args:
-        index (int): Номер параметра в командной строке
-        prompt (str): Приглашение для ввода коэффицента
-    Returns:
-        float: Коэффициент квадратного уравнения
-    '''
     try:
         # Пробуем прочитать коэффициент из командной строки
         coef_str = sys.argv[index]
-        if (coef_str.isdigit() == False):
-            print("Ошибка! Введите число!")
+
+        if(coef_str[0] == '-'):
+            coef_str = sys.argv[index].replace('-','')
+            # print('coef_str_if', coef_str)
+        else:
+            coef_str = sys.argv[index]
+            # print('coef_str_else', coef_str)
+
+        if(coef_str.isdigit() == True):
+            coef_str = sys.argv[index]
+            # print(f'{coef_str} явл-ется числом', )
+        else:
+            print('Ошибка! Введите натуральное число!')
             coef_str = 0
+
     except:
         while True:
-            #Вводим с клавиатуры
+            # Вводим с клавиатуры
             print(prompt)
             coef_str = input()
-            #Проверка, есть ли знак минус или 0?
+            # Проверка, есть ли минус числа и нулевой коэффициент?
             if (coef_str[0] != '0' or index == 2 or index == 3):
                 if (coef_str[0] == '-'):
                     coef_str1 = coef_str.replace('-', '')
                     if (coef_str1.isdigit()):
                         break
+                if (coef_str.isdigit()):
+                    break
 
-            if (coef_str.isdigit()):
-                break
-            print("Ошибка! Введите число!")
-    #Переводим строку в действительное число
+            print("Ошибка! Введите натуральное число!")
+
+    # Переводим строку в действительное число
     coef = float(coef_str)
     return coef
 
 
 def get_roots(a, b, c):
-    '''
-    Вычисление корней квадратного уравнения
-    Args:
-        a (float): коэффициент А
-        b (float): коэффициент B
-        c (float): коэффициент C
-    Returns:
-        list[float]: Список корней
-    '''
     result = []
     D = b * b - 4 * a * c
 
+    # Если дискриминат равен нулю, то корень может быть только одним
     if D == 0.0:
         root = -b / (2.0 * a)
         result.append(root)
-        #Проверка корня, т.к. отрицательное число под корнем не существует
         if (root > 0.0):
-            #Высчисляем число под корнем
             root1 = math.sqrt(root)
-            #Выводим результат
             result.append(root1)
             result.append(-root1)
+
+    # Если дискриминат больше нули, то корень может быть четырем
     elif D > 0.0:
         sqD = math.sqrt(D)
         root1 = (-b + sqD) / (2.0 * a)
         root2 = (-b - sqD) / (2.0 * a)
 
-        if(root1 == 0):
+        if (root1 == 0):
             result.append(abs(root1))
-        elif(root2 == 0):
+        elif (root2 == 0):
             result.append(abs(root2))
-        if(root1 > 0.0):
+
+        if (root1 > 0.0):
             root3 = math.sqrt(root1)
             result.append(root3)
             result.append(-root3)
-        if(root2 > 0.0):
+
+        if (root2 > 0.0):
             root4 = math.sqrt(root2)
             result.append(root4)
             result.append(-root4)
+
     return result
 
 
@@ -93,6 +92,8 @@ def main():
             len_roots = len(roots)
             if len_roots == 0:
                 print('Нет корней')
+            elif len_roots == 1:
+                print('Один корень {}'.format(round(roots[0], 2)))
             elif len_roots == 2:
                 print('Два кореня: {} и {}'.format(round(roots[0], 2), round(roots[1], 2)))
             elif len_roots == 3 and roots[0] == 0.0:
@@ -105,11 +106,10 @@ def main():
                                                              round(roots[3], 2)))
             break
         except ArithmeticError:
-            print('Ошибка! Коэффициент A не может быть равен 0!')
+            print('Ошибка! Коэффициент a должен быть натуральным числом!')
             break
 
-    # Если сценарий запущен из командной строки
 
-
+# Если сценарий запущен из командной строки
 if __name__ == "__main__":
     main()
