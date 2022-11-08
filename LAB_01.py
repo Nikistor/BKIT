@@ -1,7 +1,6 @@
 import sys
 import math
 
-
 def get_coef(index, prompt):
     try:
         # Пробуем прочитать коэффициент из командной строки
@@ -29,8 +28,8 @@ def get_coef(index, prompt):
             # Проверка, есть ли минус числа и нулевой коэффициент?
             if (coef_str[0] != '0' or index == 2 or index == 3):
                 if (coef_str[0] == '-'):
-                    coef_str1 = coef_str.replace('-', '')
-                    if (coef_str1.isdigit()):
+                    coef_str_buff = coef_str.replace('-', '')
+                    if (coef_str_buff.isdigit()):
                         break
                 if (coef_str.isdigit()):
                     break
