@@ -2,7 +2,6 @@ from .figure import Figure
 from .color import FigureColor
 import math
 
-
 class Circle(Figure):
     """
     Класс «Круг» наследуется от класса «Геометрическая фигура».
