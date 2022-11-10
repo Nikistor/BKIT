@@ -16,14 +16,11 @@ def get_coef(index, prompt):
 
         if(coef_str[0] == '-'):
             coef_str = sys.argv[index].replace('-','')
-            # print('coef_str_if', coef_str)
         else:
             coef_str = sys.argv[index]
-            # print('coef_str_else', coef_str)
 
         if(coef_str.isdigit() == True):
             coef_str = sys.argv[index]
-            # print(f'{coef_str} явл-ется числом', )
         else:
             print('Ошибка! Введите натуральное число!')
 
@@ -61,7 +58,7 @@ def get_roots(a, b, c):
             result.append(root1)
             result.append(-root1)
 
-    # Если дискриминат больше нули, то корень может быть четырем
+    # Если дискриминат больше нуля, то количество кореней может быть четыре
     elif D > 0.0:
         sqD = math.sqrt(D)
         root1 = (-b + sqD) / (2.0 * a)
@@ -102,20 +99,18 @@ def main():
             elif len_roots == 1:
                 print('Один корень {}'.format(round(roots[0], 2)))
             elif len_roots == 2:
-                print('Два кореня: {} и {}'.format(round(roots[0], 2), round(roots[1], 2)))
+                print('Два корня: {} и {}'.format(round(roots[0], 2), round(roots[1], 2)))
             elif len_roots == 3 and roots[0] == 0.0:
                 print('Три корня: {} и {} и {}'.format(round(roots[0], 2), round(roots[1], 2), round(roots[2], 2)))
             elif len_roots == 3:
                 print('Два корня: {} и {}'.format(round(roots[1], 2), round(roots[2], 2)))
             elif len_roots == 4:
-                print(
-                    'Четыре корня: {} и {} и {} и {}'.format(round(roots[0], 2), round(roots[1], 2), round(roots[2], 2),
-                                                             round(roots[3], 2)))
+                print('Четыре корня: {} и {} и {} и {}'.format(round(roots[0], 2), round(roots[1], 2),
+                                                               round(roots[2], 2), round(roots[3], 2)))
             break
         except:
             print('Ошибка заполнения!')
             break
-
 
 # Если сценарий запущен из командной строки
 if __name__ == "__main__":
