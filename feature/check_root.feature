@@ -12,7 +12,7 @@ Feature: The biquadrate equation
       | 1 | 0 | 10 | 0     | 0     | 0     | 0     |
 
 
-    # Два корней
+    # Два корня
   Scenario Outline: Checking the roots of biquadrate equations: TWO ROOTS
     Given I have a function calculation root
     And I get coefficient: <A>, <B>, <C>
@@ -25,7 +25,7 @@ Feature: The biquadrate equation
       | 1 | -5 | -36 | 3     | -3    | 0     | 0     |
 
 
-    # Три корней
+    # Три корня
   Scenario Outline: Checking the roots of biquadrate equations: TWO ROOTS
     Given I have a function calculation root
     And I get coefficient: <A>, <B>, <C>
@@ -37,7 +37,7 @@ Feature: The biquadrate equation
       | -4 | 16 | 0 | 0     | 2     | -2    | 0     |
 
 
-    # Четыре корней
+    # Четыре корня
   Scenario Outline: Checking the roots of biquadrate equations: FOUR ROOTS
     Given I have a function calculation root
     And I get coefficient: <A>, <B>, <C>
