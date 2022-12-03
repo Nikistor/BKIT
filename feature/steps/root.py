@@ -51,6 +51,6 @@ def then_results(context, root1, root2, root3, root4):
         assert round(context.results[1], 2) == float(root2)
         assert round(context.results[2], 2) == float(root3)
         assert round(context.results[3], 2) == float(root4)
-        print('Четыре корней: {} и {} и {} и {}'.format(root1, root2, root3, root4))
+        print('Четыре корня: {} и {} и {} и {}'.format(root1, root2, root3, root4))
     else:
         print('Ошибка! Корней нет!')
