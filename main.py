@@ -26,7 +26,7 @@ def main():
             elif len_roots == 1:
                 print('Один корень {}'.format(round(roots[0], 2)))
             elif len_roots == 2:
-                print('Два кореня: {} и {}'.format(round(roots[0], 2), round(roots[1], 2)))
+                print('Два корня: {} и {}'.format(round(roots[0], 2), round(roots[1], 2)))
             elif len_roots == 3 and roots[0] == 0.0:
                 print('Три корня: {} и {} и {}'.format(round(roots[0], 2), round(roots[1], 2), round(roots[2], 2)))
             elif len_roots == 3:
