@@ -51,15 +51,15 @@ class test_section(unittest.TestCase):
         self.assertEqual(test_class_sections_documents.document_id, 3)
         self.assertEqual(test_class_sections_documents.section_id, 1)
 
-    #Тестирование задания 1
+    # Тестирование задания 1
     def test_task_1(self):
         self.assertEqual(dict(task_1(modul_document, modul_section)), {'Акт': ['Список литературы']})
 
-    #Тестирование задания 2
+    # Тестирование задания 2
     def test_task_2(self):
         self.assertEqual(dict(task_2(modul_document, modul_section)), {'Отчет по БКИТ': 25, 'Практическое задание': 4, 'Акт': 3})
 
-    #Тестирование задания 3
+    # Тестирование задания 3
     def test_task_3(self):
         self.assertEqual(task_3(modul_document, modul_section), [('Акт', 'Список литературы'), ('Отчет по БКИТ', 'Список литературы')])
 
