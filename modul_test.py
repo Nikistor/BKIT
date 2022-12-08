@@ -18,9 +18,7 @@ modul_sections_documents = [
     SectionDocument(3, 2)
 ]
 
-#Тестирование на создание класс Раздел
 class test_section(unittest.TestCase):
-    #Класс Section c пустыми параметрами
     def test_class_section_zero_parameters(self):
         with self.assertRaises(TypeError) as context:
             Section()
@@ -29,7 +27,6 @@ class test_section(unittest.TestCase):
             str(context.exception)
         )
 
-    #Тест класс Section с пустыми значениями
     def test_class_section_zero_meaning(self):
         test_class_section = Section(None, None, None, None)
         self.assertEqual(test_class_section.id, None)
@@ -37,7 +34,6 @@ class test_section(unittest.TestCase):
         self.assertEqual(test_class_section.page, None)
         self.assertEqual(test_class_section.document_id, None)
 
-    #Тест класс Section cо значениями
     def test_class_section_meaning(self):
         test_class_section = Section(1, 'Технические основы разработки', 10, 3)
         self.assertEqual(test_class_section.id, 1)
@@ -45,13 +41,11 @@ class test_section(unittest.TestCase):
         self.assertEqual(test_class_section.page, 10)
         self.assertEqual(test_class_section.document_id, 3)
 
-    #Тест класс Document cо значениями
     def test_class_document_meaning(self):
         test_class_document = Document(1, 'Отчет по МД')
         self.assertEqual(test_class_document.id, 1)
         self.assertEqual(test_class_document.name, 'Отчет по МД')
 
-    #Тест класс SectionDocument cо значениями
     def test_class_section_document_meaning(self):
         test_class_sections_documents = SectionDocument(3, 1)
         self.assertEqual(test_class_sections_documents.document_id, 3)
