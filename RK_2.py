@@ -29,7 +29,7 @@ class SectionDocument:
         self.document_id = document_id
         self.section_id = section_id
 
-# Документы
+#Документы
 documents = [
     Document(1, 'Положение'),
     Document(2, 'Агентский договор'),
@@ -38,7 +38,7 @@ documents = [
     Document(5, 'Регламент'),
 ]
 
-# Разделы
+#Разделы
 sections = [
     Section(1, 'Содержание', 10, 1),
     Section(2, 'Введение', 20, 2),
@@ -52,7 +52,7 @@ sections = [
     Section(10, 'Ответственность', 94, 4),
 ]
 
-# Разделы документов
+#Разделы документов
 sections_documents = [
     SectionDocument(2, 1),
     SectionDocument(3, 5),
