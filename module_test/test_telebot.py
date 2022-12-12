@@ -10,9 +10,6 @@ data_json_users_2 = {
         {"id": 61419,
          "meaning": 172,
          "result": 836.0},
-        {"id": 6409,
-         "meaning": "10 / 0",
-         "result": "infinity"},
         {"id": 3075,
          "meaning": "15 + 15",
          "result": "30.0"},
@@ -21,7 +18,10 @@ data_json_users_2 = {
          "result": "30.0"},
         {"id": 6965,
          "meaning": "15 + 15",
-         "result": "30.0"}
+         "result": "30.0"},
+        {"id": 6409,
+         "meaning": "10 / 0",
+         "result": "infinity"},
     ],
     "965478145": [
         {"id": 6658,
@@ -39,7 +39,7 @@ data_json_users_2 = {
 class test_telebot(unittest.TestCase):
 
     # Проверка создания файла
-    def test_create_file_json(self):
+    def test_create_file(self):
         message_from_user_id = 745896123
 
         generator_of_meaning(str(message_from_user_id))
@@ -59,9 +59,9 @@ class test_telebot(unittest.TestCase):
         print(check_info)
         self.assertEqual(
             check_info, [{'id': 61419, 'meaning': 172, 'result': 836.0},
-                         {'id': 6409, 'meaning': '10 / 0', 'result': 'infinity'},
                          {'id': 3075, 'meaning': '15 + 15', 'result': '30.0'},
                          {'id': 2878, 'meaning': '15 + 15', 'result': '30.0'},
                          {'id': 6965, 'meaning': '15 + 15', 'result': '30.0'},
-                         {'id': 6965, 'meaning': '15 + 15', 'result': '30.0'}]
+                         {'id': 6409, 'meaning': '10 / 0', 'result': 'infinity'},
+                         {'id': 6409, 'meaning': '10 / 0', 'result': 'infinity'}]
         )

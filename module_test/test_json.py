@@ -55,23 +55,23 @@ data_json_with_id_1 = {
 }
 
 data_json_users_2 = {
-      "745896123": [
+    "745896123": [
             {"id": 61419,
-              "meaning": 172,
-              "result": 836.0},
-            {"id": 6409,
-              "meaning": "10 / 0",
-              "result": "infinity"},
+             "meaning": 172,
+             "result": 836.0},
             {"id": 3075,
-              "meaning": "15 + 15",
-              "result": "30.0"},
+             "meaning": "15 + 15",
+             "result": "30.0"},
             {"id": 2878,
-              "meaning": "15 + 15",
-              "result": "30.0"},
+             "meaning": "15 + 15",
+             "result": "30.0"},
             {"id": 6965,
-              "meaning": "15 + 15",
-              "result": "30.0"}
-      ],
+             "meaning": "15 + 15",
+             "result": "30.0"},
+            {"id": 6409,
+             "meaning": "10 / 0",
+             "result": "infinity"},
+    ],
       "965478145": [
             {"id": 6658,
               "meaning": "31 + 27",

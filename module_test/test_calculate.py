@@ -20,8 +20,8 @@ class test_calculate(unittest.TestCase):
     def test_7(self):
         self.assertEqual(smc('5 - 3 / 3').result, 4.0)
     def test_8(self):
-        self.assertEqual(smc('3 / 0').result, 'infinity')
-    def test_9(self):
         self.assertEqual(smc('5 * 0').result, 0.0)
+    def test_9(self):
+        self.assertEqual(smc('3 / 0').result, 'infinity')
 
 
