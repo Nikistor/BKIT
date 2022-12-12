@@ -39,7 +39,7 @@ data_json1 = {
 }
 
 data_json_with_id = {
-    "369350471": [
+    "103245678": [
         {"id": 7581,
             "meaning": '10 + 50',
             "result": '60'}
@@ -47,7 +47,7 @@ data_json_with_id = {
 }
 
 data_json_with_id_1 = {
-    "369350471": [
+    "103245678": [
         {"id": 9537,
             "meaning": '13 + 81',
             "result": '94'}
@@ -55,7 +55,7 @@ data_json_with_id_1 = {
 }
 
 data_json_users_2 = {
-      "369350478": [
+      "745896123": [
             {"id": 61419,
               "meaning": 172,
               "result": 836.0},
@@ -72,7 +72,7 @@ data_json_users_2 = {
               "meaning": "15 + 15",
               "result": "30.0"}
       ],
-      "198498415": [
+      "965478145": [
             {"id": 6658,
               "meaning": "31 + 27",
               "result": "58.0"},
@@ -122,7 +122,7 @@ class test_json(unittest.TestCase):
         # Проверка наличия и сходимости
         self.assertEqual(
             load_data(),
-            {'369350471': [{'id': 7581, 'result': '60', 'meaning': '10 + 50'}]}
+            {'103245678': [{'id': 7581, 'result': '60', 'meaning': '10 + 50'}]}
         )
 
     # Проверка на добавлении json данных с идентификатором пользователя
@@ -131,12 +131,12 @@ class test_json(unittest.TestCase):
         data_recording(data_json_with_id)
 
         # Изменение файла - добавление новых данных
-        combined_data(data_json_with_id_1, str(369350471))
+        combined_data(data_json_with_id_1, str(103245678))
 
         # Проверка наличия и сходимости
         self.assertEqual(
             load_data(),
-            {'369350471': [
+            {'103245678': [
                 {'id': 7581, 'result': '60', 'meaning': '10 + 50'},
                 {'id': 9537, 'result': '94', 'meaning': '13 + 81'}
             ]})
@@ -147,7 +147,7 @@ class test_json(unittest.TestCase):
 
         # Проверка наличия и сходимости
         self.assertEqual(
-            load_data_for_id_user('198498415'),
+            load_data_for_id_user('965478145'),
             [{'id': 6658, 'result': '58.0', 'meaning': '31 + 27'},
              {'id': 7427, 'result': '582.0', 'meaning': '142 + 440'},
              {'id': 9230, 'result': '10.0', 'meaning': '9 + 1 1'},
@@ -159,9 +159,9 @@ class test_json(unittest.TestCase):
         data_recording(data_json_users_2)
 
         # Удаление данные по id пользователя
-        delete_data_for_id_user('369350478')
+        delete_data_for_id_user('745896123')
 
         # Проверка наличия и сходимости
         self.assertEqual(
-            load_data_for_id_user('198498415'),
+            load_data_for_id_user('965478145'),
             'Ошибка! Такого идентификатора не существует.')

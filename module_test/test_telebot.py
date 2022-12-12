@@ -6,7 +6,7 @@ file_locator = 'D:\Работа\МГТУ им. Н.Э.Баумана\Програ
 from calculate.work_calculate import generator_of_meaning, get_info_with_id_user, data_recording
 
 data_json_users_2 = {
-    "369350478": [
+    "745896123": [
         {"id": 61419,
          "meaning": 172,
          "result": 836.0},
@@ -23,7 +23,7 @@ data_json_users_2 = {
          "meaning": "15 + 15",
          "result": "30.0"}
     ],
-    "198498415": [
+    "965478145": [
         {"id": 6658,
          "meaning": "31 + 27",
          "result": "58.0"},
@@ -36,12 +36,11 @@ data_json_users_2 = {
     ]
 }
 
-
 class test_telebot(unittest.TestCase):
 
     # Проверка создания файла
     def test_create_file_json(self):
-        message_from_user_id = 369350478
+        message_from_user_id = 745896123
 
         generator_of_meaning(str(message_from_user_id))
 
@@ -54,7 +53,7 @@ class test_telebot(unittest.TestCase):
     def test_get_info_with_id_user(self):
         data_recording(data_json_users_2)
 
-        message_from_user_id = 369350478
+        message_from_user_id = 745896123
 
         check_info = get_info_with_id_user(str(message_from_user_id))
         print(check_info)
