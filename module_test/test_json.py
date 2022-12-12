@@ -115,7 +115,7 @@ class test_json(unittest.TestCase):
             ]})
 
     # Проверка на добавлении json данных с идентификатором пользователя
-    def test_and_read_file_with_id(self):
+    def test_and_read_file_id(self):
         # Создание файла с данными
         data_recording(data_json_with_id)
 
@@ -126,7 +126,7 @@ class test_json(unittest.TestCase):
         )
 
     # Проверка на добавлении json данных с идентификатором пользователя
-    def test_append_json_in_json_with_id(self):
+    def test_append_json_in_json_id(self):
         # Создание файла с данными
         data_recording(data_json_with_id)
 

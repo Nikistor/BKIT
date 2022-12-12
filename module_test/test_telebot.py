@@ -50,7 +50,7 @@ class test_telebot(unittest.TestCase):
         )
 
     # Проверка на получение информации по id пользователя
-    def test_get_info_with_id_user(self):
+    def test_get_info_id_user(self):
         data_recording(data_json_users_2)
 
         message_from_user_id = 745896123
