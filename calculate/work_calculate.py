@@ -31,7 +31,7 @@ def get_info():
         return 'Нет файла'
 
 #Получение информации с идентификатором пользователя
-def get_info_with_id_user(id_user):
+def get_info_id_user(id_user):
     try:
         data = load_data_for_id_user(id_user)
         return data

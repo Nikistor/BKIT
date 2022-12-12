@@ -3,7 +3,7 @@ import os.path
 
 file_locator = 'D:\Работа\МГТУ им. Н.Э.Баумана\Программирование\Программы\Программы за 5 семестр\LAB_06\calculate'
 
-from calculate.work_calculate import generator_of_meaning, get_info_with_id_user, data_recording
+from calculate.work_calculate import generator_of_meaning, get_info_id_user, data_recording
 
 data_json_users_2 = {
     "745896123": [
@@ -55,7 +55,7 @@ class test_telebot(unittest.TestCase):
 
         message_from_user_id = 745896123
 
-        check_info = get_info_with_id_user(str(message_from_user_id))
+        check_info = get_info_id_user(str(message_from_user_id))
         print(check_info)
         self.assertEqual(
             check_info, [{'id': 61419, 'meaning': 172, 'result': 836.0},
