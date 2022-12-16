@@ -90,7 +90,7 @@ def check_callback_data(callback):
         bot.send_message(callback.message.chat.id, 'Операция прошла успешно')
 
     elif (callback.data == "btn_5"):
-        img = open('NFS.jpg', 'rb')
+        img = open('moscow.jpg', 'rb')
         bot.send_photo(callback.message.chat.id, img)
 
     else:
@@ -138,7 +138,7 @@ def start_story(message):
 #Просмотр изображения
 @bot.message_handler(commands=['image'])
 def start_image(message):
-    img = open('NFS.jpg', 'rb')
+    img = open('moscow.jpg', 'rb')
     bot.send_photo(message.chat.id, img)
 
 #Генерация случайных вычислений
