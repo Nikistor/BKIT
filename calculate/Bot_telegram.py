@@ -1,4 +1,4 @@
-import config
+import configuration
 import telebot
 from telebot import types
 import random
