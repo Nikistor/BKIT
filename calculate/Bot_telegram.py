@@ -1,4 +1,4 @@
-import link
+import config
 import telebot
 from telebot import types
 import random
@@ -9,7 +9,7 @@ from json_function import combined_data, delete_data_for_id_user, load_data_for_
 from work_calculate import generator_of_meaning
 
 # Создание бота
-bot = telebot.TeleBot(link.token)
+bot = telebot.TeleBot(config.token)
 
 SPISOK = '''
 /menu - Меню (кнопки переключателя)
